@@ -20,22 +20,20 @@
       value: vari,
       next: null
     };
-    var i =0;
-    i++;
 
-    if (head === null){
+
+    if (head === null && tail === null){
       head = newNode;
-    }
-
-      if (tail === null){
-        tail = newNode;
+      tail = newNode;
+      return newNode;
       }
 
-
-
-    return newNode;
+      tail.next = newNode;
+      tail = newNode;
 
   };
+
+
 
   var remove = function(){
 
