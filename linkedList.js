@@ -3,17 +3,37 @@
  * @description  Main Module
  * @return {Object} an object exposing methods to be used to manipulate a linked list
  */
-function linkedListGenerator(){
-
+ function linkedListGenerator(){
+  var head = null;
+  var tail = null;
   var getHead = function(){
 
+    return head;
   };
 
   var getTail = function(){
-
+    return tail;
   };
 
-    var add = function(){
+  var add = function(vari){
+    var newNode = {
+      value: vari,
+      next: null
+    };
+    var i =0;
+    i++;
+
+    if (head === null){
+      head = newNode;
+    }
+
+      if (tail === null){
+        tail = newNode;
+      }
+
+
+
+    return newNode;
 
   };
 
