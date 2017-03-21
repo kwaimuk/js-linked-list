@@ -3,7 +3,7 @@
  * @description  Main Module
  * @return {Object} an object exposing methods to be used to manipulate a linked list
  */
- function linkedListGenerator(){
+ function linkedListGenerator() {
   var head = null;
   var tail = null;
   var getHead = function(){
@@ -45,18 +45,13 @@
 
 
     if(find === false){
-      console.log("find",find);
       return false;
     } else if(section === false){
       previous.next = null;
       tail = previous;
     } else if(gaga===0){
       head=section;
-    } else if(find === false){
-      console.log("find",find);
-      return false;
     }
-
 
 
 //edge case if node delete itself
@@ -64,8 +59,6 @@
     //   head = null;
     //   tail = null;
     // }
-
-
 
     previous.next = section;
 
@@ -89,17 +82,36 @@
 
 
 
-  var insert = function(){
+  var insert = function(value, number){
+    var find =get(number);
+    var previous = get(number - 1);
+    var section = get(number + 1 );
+    var newNode = {
+      value: value,
+      next: null
+    };
 
+    if(number<0 || get(number) === false){
+      return false;
+
+    } else if  (number === 0){
+      newNode.next = head;
+      head = newNode;
+
+    } else {
+      newNode.next = get(number);
+      previous.next = newNode;
+    }
   };
 
-  return {
-    getHead: getHead,
-    getTail: getTail,
-    add: add,
-    remove: remove,
-    get: get,
-    insert: insert
-  };
+    return {
+      getHead: getHead,
+      getTail: getTail,
+      add: add,
+      remove: remove,
+      get: get,
+      insert: insert
+
+    };
+
 };
-
